@@ -1,0 +1,9 @@
+{
+  "name": "graca-backend",
+  "version": "1.0.0",
+  "description": "graca software",
+  "main": "index.ts",
+  "repository": "https://gitlab.com/graca/graca-backend.git",
+  "author": "Christian Serrano <61697287+Chiles012@users.noreply.github.com>",
+  "license": "MIT"
+}
