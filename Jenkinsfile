@@ -14,6 +14,7 @@ pipeline {
                 //   }
                 // }
                 echo "GitHub Event: ${env.githubEvent}"
+                printenv
             }
         }
     }
