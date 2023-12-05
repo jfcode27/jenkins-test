@@ -13,7 +13,7 @@ pipeline {
                 //     break
                 //   }
                 // }
-                echo "GitHub Event: ${env.githubEvent}"
+                echo "GitHub Event: ${env.GIT_COMMIT}"
             }
         }
     }
