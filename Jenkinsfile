@@ -29,4 +29,3 @@ pipeline {
         // Otras etapas de tu construcción
     }
 }
-//json
