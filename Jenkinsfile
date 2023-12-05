@@ -1,31 +1,31 @@
 pipeline {
     agent any
 
-    environment {
-        CHANGE_URL = "${env.CHANGE_URL}"
-    }
-
     stages {
-        stage('Determinar Tipo de Evento') {
+        stage('Imprimir Mensajes según el Evento') {
             steps {
                 script {
-                    def payload = sh(script: "curl -sSL $CHANGE_URL", returnStdout: true).trim()
-
-                    if (payload.contains('pull_request')) {
+                    // Verificar si es un evento de pull request
+                    if (env.CHANGE_ID) {
                         echo 'Este fue un evento de pull request'
-                    } else if (payload.contains('push')) {
-                        echo 'Este fue un evento de push directo a la rama'
-                    } else {
-                        echo 'Tipo de evento no reconocido'
+                        // Agregar más lógica específica de pull request aquí si es necesario
+                    }
+                    
+                    // Verificar si es un evento de push
+                    if (env.CHANGE_BRANCH) {
+                        echo 'Este fue un evento de push a la rama ' + env.CHANGE_BRANCH
+                        // Agregar más lógica específica de push aquí si es necesario
+                    }
+
+                    // Verificar si es un evento de comentario
+                    if (env.COMMENT) {
+                        echo 'Se realizó un comentario en el cambio'
+                        // Agregar más lógica específica de comentario aquí si es necesario
                     }
                 }
             }
         }
 
-        // stage('Otras Etapas de Construcción') {
-        //     steps {
-        //         // Resto de tu lógica de construcción
-        //     }
-        // }
+        // Otras etapas de tu construcción
     }
 }
