@@ -22,10 +22,10 @@ pipeline {
             }
         }
 
-        stage('Otras Etapas de Construcción') {
-            steps {
-                // Resto de tu lógica de construcción
-            }
-        }
+        // stage('Otras Etapas de Construcción') {
+        //     steps {
+        //         // Resto de tu lógica de construcción
+        //     }
+        // }
     }
 }
