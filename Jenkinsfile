@@ -22,6 +22,8 @@ pipeline {
                         echo 'Se realizó un comentario en el cambio'
                         // Agregar más lógica específica de comentario aquí si es necesario
                     }
+
+                    
                 }
             }
         }
